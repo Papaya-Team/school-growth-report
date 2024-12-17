@@ -1,0 +1,45 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Paso 1: Checkout del código fuente
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Paso 2: Instala pnpm
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8 # Especifica la versión de pnpm que estás usando
+
+      # Paso 3: Configura Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18 # Usa la versión que prefieras
+          cache: 'pnpm'    # Habilita la caché para pnpm
+
+      # Paso 4: Instala las dependencias usando pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Paso 5: Construye la aplicación
+      - name: Build the app
+        run: pnpm build
+
+      # Paso 6: Despliega en GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
