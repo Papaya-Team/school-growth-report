@@ -8,7 +8,7 @@ Chart.register(...registerables);
 // Define el plugin personalizado
 const customTextPlugin = {
   id: 'customText',
-  beforeDraw(chart) {
+  beforeDraw(chart:any) {
     const { width, height, options } = chart;
     const ctx = chart.ctx;
 

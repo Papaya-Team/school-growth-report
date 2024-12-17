@@ -10,5 +10,14 @@
     {
       "path": "./tsconfig.vitest.json"
     }
-  ]
+  ],
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false, // Opcional: Deshabilita la verificación de tipos en archivos JS
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  }
 }
