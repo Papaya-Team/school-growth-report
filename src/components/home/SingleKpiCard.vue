@@ -2,21 +2,25 @@
 import CardLayout from '@/layouts/CardLayout.vue'
 import UpgradeArrow from '@/components/icons/UpgradeArrow.vue'
 import { defineProps } from 'vue'
+import { useRouter } from 'vue-router';
 
 const props = defineProps<{
   item: {
     name: string
     value: string
     percentage: string
+    route: string | undefined
   }
 }>()
+
+const router = useRouter();
 
 </script>
 
 <template>
   <CardLayout>
-    <div>
-      <p>{{item.name}}</p>
+    <div :class="item.route ? 'bg-red-300' : ''">
+      <p @click="router.push(item.route)">{{item.name}}</p>
     </div>
     <div class="flex justify-between items-center">
       <p class="text-[30px]">{{item.value}}</p>
