@@ -15,6 +15,8 @@
     "allowJs": true,
     "checkJs": false, // Opcional: Deshabilita la verificación de tipos en archivos JS
     "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "noEmitOnError": false,
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
