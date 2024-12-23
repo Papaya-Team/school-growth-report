@@ -6,8 +6,8 @@ import CardLayout from '@/layouts/CardLayout.vue';
 </script>
 
 <template>
-  <section class="p-[20px]">
-    <BackBtn @click="$router.push('/')" class="my-[20px]" />
+  <section class="p-[20px] main-container">
+    <BackBtn @click="$router.back()" class="my-[20px]" />
 
     <CardLayout>
       <ClosingGap />

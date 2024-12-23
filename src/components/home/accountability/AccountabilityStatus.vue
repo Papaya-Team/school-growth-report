@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import CardLayout from '@/layouts/CardLayout.vue'
 import CurrentState from '@/components/home/accountability/CurrentState.vue'
+import RightArrow from '@/components/icons/RightArrow.vue';
 
 </script>
 

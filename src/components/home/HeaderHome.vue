@@ -4,7 +4,7 @@ import LogoPapaya from '@/components/icons/LogoPapaya.vue'
 </script>
 
 <template>
-  <header>
+  <header class="mt-[20px]">
     <div class="container mx-auto">
       <div class="bg-blue-950 px-[40px] py-[20px] flex justify-between rounded-2xl">
         <div class="flex">

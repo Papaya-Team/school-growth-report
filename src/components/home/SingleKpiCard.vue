@@ -19,8 +19,8 @@ const router = useRouter();
 
 <template>
   <CardLayout>
-    <div :class="item.route ? 'bg-red-300' : ''">
-      <p @click="router.push(item.route)">{{item.name}}</p>
+    <div :class="item.route ? 'bg-red-300 cursor-pointer' : ''">
+      <p @click="router.push(item.route)"> {{ item.name }}</p>
     </div>
     <div class="flex justify-between items-center">
       <p class="text-[30px]">{{item.value}}</p>

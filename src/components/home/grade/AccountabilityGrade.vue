@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import CardLayout from '@/layouts/CardLayout.vue'
-import LeftArrow from '@/components/icons/LeftArrow.vue'
+import RightArrow from '@/components/icons/RightArrow.vue'
 import { ref, onMounted } from "vue";
-import { DoughnutChart } from "vue-chart-3";
 import DoughnutChartWithText from '@/plugins/chart-setup';
 
 
@@ -91,12 +90,15 @@ const chartOptions4 = ref({
 <template>
   <CardLayout>
     <div>
-      <p class="text-[20px]">Accountability Grade</p>
+      <div class="flex items-center">
+        <p class="text-[20px]">Accountability Grade </p>
+        <RightArrow class="ml-[10px]" />
+      </div>
       <p class="text-[#FF7223] text-[12px]"> Your current grade vs Your future grade </p>
     </div>
     <div class="flex items-center">
       <DoughnutChartWithText :width="200" :height="200" :chart-data="chartData1" :options="chartOptions1" />
-      <LeftArrow />
+      <RightArrow />
       <DoughnutChartWithText :width="200" :height="200" :chart-data="chartData2" :options="chartOptions2" />
     </div>
 
@@ -105,7 +107,7 @@ const chartOptions4 = ref({
     </div>
     <div class="flex items-center">
       <DoughnutChartWithText :width="200" :height="200" :chart-data="chartData1" :options="chartOptions1" />
-      <LeftArrow />
+      <RightArrow />
       <DoughnutChartWithText :width="200" :height="200" :chart-data="chartData4" :options="chartOptions4" />
     </div>
   </CardLayout>

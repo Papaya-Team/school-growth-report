@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import CardLayout from '@/layouts/CardLayout.vue'
 import { ref, onMounted } from "vue";
-import { DoughnutChart } from "vue-chart-3";
 import DoughnutChartWithText from '@/plugins/chart-setup';
 import BulletChart from '@/components/home/BulletChart.vue';
+import RightArrow from '@/components/icons/RightArrow.vue';
 
 
 const chartData1 = {
@@ -39,7 +39,12 @@ const chartOptions1 = {
 <template>
   <CardLayout>
     <div>
-      <p class="text-[20px]">Campus Hours Status</p>
+      <router-link to="/program-hours">
+        <div class="flex items-center">
+          <p class="text-[20px]">Campus Hours Status</p>
+          <RightArrow class="ml-[10px]" />
+        </div>
+      </router-link>
     </div>
 
     <div>

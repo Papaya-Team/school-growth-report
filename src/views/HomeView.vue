@@ -1,72 +1,33 @@
-<script setup lang="ts">
-import CardLayout from '@/layouts/CardLayout.vue'
+<script lang="ts" setup>
+import School from '@/components/icons/School.vue';
 
-
-import HeaderHome from '@/components/home/HeaderHome.vue'
-import SingleKpiCard from '@/components/home/SingleKpiCard.vue'
-import KpiProgressCard from '@/components/home/KpiProgressCard.vue'
-import EffectiveTime from '@/components/home/EffectiveTime.vue'
-import AccountabilityStatus from '@/components/home/accountability/AccountabilityStatus.vue'
-import AccountabilityGrade from '@/components/home/grade/AccountabilityGrade.vue'
-import EffectiveTimeCharts from '@/components/home/EffectiveTimeCharts.vue'
-import DiagnosticResults from '@/components/home/DiagnosticResults.vue'
-import HoursStatus from '@/components/home/HoursStatus.vue'
-import ClosingGap from '@/components/closing-gap/ClosingGap.vue'
-
-
-const singleCards = [
-  { name: 'Attendance', value: '90.8%', percentage: '0.0%', route: 'attendance'  },
-  { name: 'Effective Time', value: '90.8%', percentage: '0.0%', route: 'effective-time' },
-  { name: 'Active Students', value: '90.8%', percentage: '0.0%' },
-  { name: 'On Track', value: '3.5%', percentage: '0.0%' },
-  { name: 'At Risk', value: '40.6%', percentage: '0.0%' },
-]
-
-const progressCards = [
-  { name: 'Total active students', total: 28, value: 5, number: 28 },
-  { name: 'Student Satisfaction', total: 28, value: 4, number: 4 },
-]
 
 </script>
 
 <template>
-  <main class="p-[20px]">
-    <HeaderHome />
-    <section class="grid grid-cols-5 gap-[24px] main-container">
-      <SingleKpiCard v-for="(item, index) in singleCards" :key="item.name" :item="item" />
-    </section>
+  <section class="main-container">
+    <div class="flex flex-col justify-center items-center">
+      <figure style="width: 120px;">
+        <img src="/dilley.png" alt="">
+      </figure>
+      <div class="text-center">
+        <p class="text-[40px] text-[#FF7223] font-bold my-[20px]">Dilley ISD</p>
+        <p class="text-[20px]">Please choose one school to continue</p>
+      </div>
+    </div>
 
-    <section class="main-container">
-      <CardLayout> 
-        <ClosingGap />
-      </CardLayout>
-    </section>
+    <div class="flex gap-[20px] justify-center items-center">
+      <div v-for="(item, index) in 3" :key="index"
+        class="p-[20px]">
+        <div class="flex flex-col items-center justify-center">
+          <School />
+          <p>Elementary School</p>
+          <p>Kinder to 3rd Grade</p>
+          <p>Accountability Status</p>
+        </div>
+      </div>
 
-    <section class="main-container ">
-      <AccountabilityStatus />
-      <!-- <AccountabilityStatus /> -->
-    </section>
 
-    <section class="main-container grid grid-cols-2 gap-[20px]">
-      <AccountabilityGrade class="mt-[20px]" />
-      <EffectiveTimeCharts class="mt-[20px]" />
-      <DiagnosticResults class="mt-[20px]" />
-      <HoursStatus class="mt-[20px]" />
-    </section>
-
-    <section class="grid grid-cols-2 gap-[24px] main-container">
-      <KpiProgressCard v-for="(item, index) in progressCards" :key="index" :item="item" />
-    </section>
-
-    <section class=" main-container">
-      <EffectiveTime />
-    </section>
-
-  </main>
+    </div>
+  </section>
 </template>
-
-<style>
-.main-container {
-  @apply container mx-auto mt-[24px]
-}
-</style>
