@@ -39,7 +39,7 @@ const progressCards = [
       <!-- <AccountabilityStatus /> -->
     </section>
 
-    <section class="main-container grid grid-cols-2 gap-[20px]">
+    <section class="main-container gap-[20px]">
       <AccountabilityGrade class="mt-[20px]" />
     </section>
 

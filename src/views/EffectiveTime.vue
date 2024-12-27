@@ -5,6 +5,29 @@ import BackBtn from '@/components/utils/BackBtn.vue';
 import SearchItem from '@/components/utils/SearchItem.vue';
 import EffectiveTimeStudent from '@/components/effective-time/EffectiveTimeStudent.vue';
 
+import apiClient from "@/plugins/axios";
+import { ref, onMounted } from "vue";
+
+const student = ref(null);
+const loading = ref(false);
+const error = ref(null);
+
+const fetchStudentData = async () => {
+  loading.value = true; 
+  error.value = null;
+
+  try {
+    const response = await apiClient.get("/attendance");
+    student.value = response.data;
+  } catch (err) {
+    error.value = "Hubo un error al obtener los datos: " + err.message;
+  } finally {
+    loading.value = false;
+  }
+};
+
+onMounted(fetchStudentData);
+
 </script>
 
 <template>
