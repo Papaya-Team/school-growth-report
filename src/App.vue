@@ -11,7 +11,7 @@ const isHome = computed(() => route.name === 'home');
 </script>
 
 <template>
-  <HeaderHome v-if="!isHome" />
+  <HeaderHome v-if="!isHome" class="mx-[20px]" />
 
 
   <RouterView />
@@ -19,6 +19,6 @@ const isHome = computed(() => route.name === 'home');
 
 <style>
 .main-container {
-  @apply container mx-auto mt-[24px]
+  @apply mx-auto mt-[24px]
 }
 </style>

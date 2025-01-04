@@ -5,14 +5,9 @@ import { defineProps } from 'vue'
 
 const props = defineProps<{
   title : string
+  bars : {name: string, value: number, percentage: number}[]
 }>()
 
-const bars = [
-  {name: 'Mastered', value: 0, percentage: 0},
-  {name: 'Meets', value: 0, percentage: 0},
-  {name: 'Approaches', value: 0, percentage: 0},
-  {name: 'Did Not Meet', value: 14, percentage: 100},
-]
 
 </script>
 

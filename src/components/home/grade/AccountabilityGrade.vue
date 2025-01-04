@@ -53,7 +53,7 @@ import { ref, onMounted } from "vue";
 
       <div class="w-1/2">
         <div class="mt-[20px]">
-          <p class="text-[#FF7223] text-[12px] mb-[20px]"> Your current grade vs Your future grade </p>
+          <p class="text-[#FF7223] text-[12px] mb-[20px]"> Your goal grade </p>
         </div>
 
         <div class="flex items-center">

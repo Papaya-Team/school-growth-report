@@ -10,7 +10,7 @@ import SearchItem from '@/components/utils/SearchItem.vue';
 <template>
   <section>
 
-    <div class="mb-[20px] bg-red-300">
+    <div class="mb-[20px]">
       <router-link to="/closing-the-gap">
         <p class="text-[20px] font-bold">Closing the Gap</p>
       </router-link>
