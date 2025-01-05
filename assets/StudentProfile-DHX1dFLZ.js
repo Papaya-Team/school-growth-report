@@ -1,1 +1,0 @@
-import{_ as t}from"./BackBtn.vue_vue_type_script_setup_true_lang-BZDDx1Ra.js";import{d as n,c as s,e as a,o as r}from"./index-eAM5bsdE.js";const c={class:"main-container"},l=n({__name:"StudentProfile",setup(i){return(o,e)=>(r(),s("section",c,[a(t,{onClick:e[0]||(e[0]=m=>o.$router.back()),class:"my-[20px]"})]))}});export{l as default};
