@@ -13,35 +13,41 @@ const schools = [
   {
     value: 'elementary',
     name: 'Elementary School',
-    grade: 'Kinder to 3rd Grade',
-    recentApproaches: 33.8,
-    firstApproaches: 26.9
+    grade: '3rd to 5th Grade',
+    recentApproaches: 30,
+    firstApproaches: 42
   },
   {
     value: 'middle',
     name: 'Middle School',
-    grade: '4th to 8th Grade',
-    recentApproaches: 48.1,
-    firstApproaches: 26.9
+    grade: '6th to 8th Grade',
+    recentApproaches: 48,
+    firstApproaches: 50
   },
   {
     value: 'high',
     name: 'High School',
     grade: '9th to 12th Grade',
-    recentApproaches: 53.8,
-    firstApproaches: 37.9
+    recentApproaches: 59,
+    firstApproaches: 67
   }
 ]
 
 const chartData = [
   {
-    // labels: ["Red", "Gray"],
+    // labels: ["STAAR", "INTERIM"],
     datasets: [
       {
-        label: "Dataset",
-        data: [21, 79],
+        label: "Approaches",
+        data: [schools[0].recentApproaches, 100 - schools[0].recentApproaches],
         backgroundColor: ["#A1258F", "#D0D0D0"],
-        cutout: "80%",
+        cutout: "70%",
+      },
+      {
+        label: "Dataset",
+        data: [schools[0].firstApproaches, 100 - schools[0].firstApproaches],
+        backgroundColor: ["#12B76A", "#D0D0D0"],
+        cutout: "70%",
       },
     ],
   },
@@ -50,9 +56,15 @@ const chartData = [
     datasets: [
       {
         label: "Dataset",
-        data: [21, 79],
+        data: [schools[1].recentApproaches, 100 - schools[1].recentApproaches],
         backgroundColor: ["#A1258F", "#D0D0D0"],
-        cutout: "80%",
+        cutout: "70%",
+      },
+      {
+        label: "Dataset",
+        data: [schools[1].firstApproaches, 100 - schools[1].firstApproaches],
+        backgroundColor: ["#12B76A", "#D0D0D0"],
+        cutout: "70%",
       },
     ],
   },
@@ -61,9 +73,15 @@ const chartData = [
     datasets: [
       {
         label: "Dataset",
-        data: [21, 79],
+        data: [schools[2].recentApproaches, 100 - schools[2].recentApproaches],
         backgroundColor: ["#A1258F", "#D0D0D0"],
-        cutout: "80%",
+        cutout: "70%",
+      },
+      {
+        label: "Dataset",
+        data: [schools[2].firstApproaches, 100 - schools[2].firstApproaches],
+        backgroundColor: ["#12B76A", "#D0D0D0"],
+        cutout: "70%",
       },
     ],
   }
@@ -151,7 +169,7 @@ const setSchool = (school: string) => {
 
               <p class="mt-[30px]">First Result</p>
               <p class="text-[10px] text-[#666666]">STAAR Data 2023-2024</p>
-              <p class="font-bold mt-[10px]"> <span class="text-[#A1258F]">Approaches</span> {{ item.firstApproaches }}%</p>
+              <p class="font-bold mt-[10px]"> <span class="text-[#12B76A]">Approaches</span> {{ item.firstApproaches }}%</p>
             </div>
           </div>
         </div>
