@@ -32,3 +32,7 @@ const elaES = [
   { id: 243, name: 'Lopez, Kaitlynn', ttms: 1.4, et_hrs: 8.17, lost_time: 3.08, total_time: 11.25, percentage: '80.00%', diagnostic_grade: 'Current Grade', total_mastered: 6 },
   { id: 242, name: 'Baldwin, Alice', ttms: 1.1, et_hrs: 8.75, lost_time: 2.5, total_time: 11.25, percentage: '86.67%', diagnostic_grade: 'Current Grade', total_mastered: 8 }
 ];
+
+
+export const getMathES = () => { return mathES; }
+export const getElaES = () => { return elaES; }

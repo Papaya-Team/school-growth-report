@@ -2,6 +2,15 @@
 import BadgeItem from '@/components/utils/BadgeItem.vue';
 import LessonItem from '@/components/closing-gap/LessonItem.vue';
 
+import { defineProps } from 'vue';
+
+const props = defineProps<{
+  student: {
+    name: string;
+    id: number;
+  }
+}>()
+
 const lessons = [
   {text: 'RWNE - 8.4A', status: 'mastered' },
   {text: 'RWNE - 8.4A', status: 'reviewed' ,},
@@ -17,7 +26,7 @@ const lessons = [
 
     <div class="border-r-2 pr-[20px]">
       <p class="gray_text">5th Grade</p>
-      <p class="text-[#1A4180] font-bold my-[8px]">Jose Martinez de la Cruz</p>
+      <p class="text-[#1A4180] font-bold my-[8px]">{{ student.name }}</p>
       <div class="flex gap-[10px]">
         <BadgeItem class="px-[5px] py-[3px]" :text="'active'" :color="'green'" />
         <BadgeItem class="px-[5px] py-[3px]" :text="'english'" :color="'orange'" />
