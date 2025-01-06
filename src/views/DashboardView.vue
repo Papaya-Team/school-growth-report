@@ -18,22 +18,22 @@ const { school } = schoolStore;
 
 const singleCards = {
   elementary: [
-    { name: 'Attendance', value: '44.76%', percentage: '0.0%', route: 'attendance' },
-    { name: 'Effective Time', value: '75.86%', percentage: '0.0%', route: 'effective-time' },
+    { name: 'Attendance', value: '44.76%', percentage: '0.0%'},
+    { name: 'Effective Time', value: '75.86%', percentage: '0.0%'},
     { name: 'Active Students', value: '100%', percentage: '0.0%' },
     { name: 'On Track', value: '3.5%', percentage: '0.0%' },
     { name: 'At Risk', value: '40.6%', percentage: '0.0%' },
   ],
   middle: [
-    { name: 'Attendance', value: '76.19%', percentage: '0.0%', route: 'attendance' },
-    { name: 'Effective Time', value: '69.02%', percentage: '0.0%', route: 'effective-time' },
+    { name: 'Attendance', value: '76.19%', percentage: '0.0%'},
+    { name: 'Effective Time', value: '69.02%', percentage: '0.0%'},
     { name: 'Active Students', value: '80.8%', percentage: '0.0%' },
     { name: 'On Track', value: '3.5%', percentage: '0.0%' },
     { name: 'At Risk', value: '40.6%', percentage: '0.0%' },
   ],
   high: [
-    { name: 'Attendance', value: '100%', percentage: '0.0%', route: 'attendance' },
-    { name: 'Effective Time', value: '28.57%', percentage: '0.0%', route: 'effective-time' },
+    { name: 'Attendance', value: '100%', percentage: '0.0%'},
+    { name: 'Effective Time', value: '28.57%', percentage: '0.0%'},
     { name: 'Active Students', value: '70.8%', percentage: '0.0%' },
     { name: 'On Track', value: '3.5%', percentage: '0.0%' },
     { name: 'At Risk', value: '40.6%', percentage: '0.0%' },

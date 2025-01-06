@@ -38,7 +38,7 @@ const bgColor = () => {
         </figure>
         <p>{{ item.name }}</p>
       </div>
-      <p class="text-orange-500">{{ item.value }}%</p>
+      <p class="text-orange-500">{{ item.percentage.toFixed(0) }}%</p>
     </div>
 
     <div class="w-full bg-zinc-400 rounded-lg">
@@ -47,7 +47,7 @@ const bgColor = () => {
         class="text-sm font-medium text-blue-100 text-center p-0.5 leading-none rounded-lg flex items-center justify-center"
         style="height: 25px;"
         :style="{ width: `${item.percentage == 0 ? 100 : item.percentage}%` }">
-        <p>{{ item.value }}%</p>
+        <p>{{ item.value }}</p>
       </div>
     </div>
   </div>

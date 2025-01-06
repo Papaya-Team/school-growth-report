@@ -20,7 +20,7 @@ const customTextPlugin = {
     const thirdText = customOptions.thirdText || '';
 
     const centerX = width / 2;
-    const centerY = height / 2;
+    const centerY = (height / 2) - 30;
 
     ctx.save();
     ctx.font = 'bold 20px Arial';
@@ -36,7 +36,7 @@ const customTextPlugin = {
     }
 
     if (thirdText) {
-      ctx.font = '10px Arial';
+      ctx.font = '14px Arial';
       ctx.fillStyle = '#12B76A';
       ctx.fillText(thirdText, centerX, centerY + 50);
     }
