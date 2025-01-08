@@ -1,13 +1,17 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView, useRoute } from 'vue-router'
 import HeaderHome from '@/components/home/HeaderHome.vue'
+import { computed } from 'vue';
 
 
+const route = useRoute();
+
+const isHome = computed(() => route.name === 'home');
 
 </script>
 
 <template>
-  <HeaderHome />
+  <HeaderHome v-if="!isHome" class="mx-[20px]" />
 
 
   <RouterView />
@@ -15,6 +19,6 @@ import HeaderHome from '@/components/home/HeaderHome.vue'
 
 <style>
 .main-container {
-  @apply container mx-auto mt-[24px]
+  @apply mx-auto mt-[24px]
 }
 </style>
