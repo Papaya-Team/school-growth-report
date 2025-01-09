@@ -10,6 +10,7 @@ import EffectiveTimeCharts from '@/components/home/EffectiveTimeCharts.vue'
 import DiagnosticResults from '@/components/home/DiagnosticResults.vue'
 import HoursStatus from '@/components/home/HoursStatus.vue'
 import ClosingGap from '@/components/closing-gap/ClosingGap.vue'
+import GlowingStudents from '@/components/home/GlowingStudents.vue'
 
 import { useSchoolStore } from '@/stores/school';
 
@@ -55,6 +56,25 @@ const progressCards = {
   ]
 }
 
+const glowingAndGrowingStudents = {
+  elementary: [
+    { students: [
+        { name: 'Destiny Aguillon', percentage: 90},
+        { name: 'Alice Baldwin', percentage: 87},
+        { name: 'Carlos Barrera', percentage: 86},
+        { name: 'Jesus Chavera', percentage: 80},
+        { name: 'Riddick Fonseca', percentage: 80},
+      ], name: 'Glowing Students', color: '#7932FF', bgColor: '#F6F1FF' },
+    { students: [
+        { name: 'Jaelyn Hernandez', percentage: 36},
+        { name: 'Alice Baldwin', percentage: 50},
+        { name: 'Carlos Barrera', percentage: 56},
+        { name: 'Jesus Chavera', percentage: 60},
+        { name: 'Riddick Fonseca', percentage: 72},
+      ], name: 'Growing Students', color: '#12B76A', bgColor: '#E7F8F0' }
+  ]
+}
+
 </script>
 
 <template>
@@ -66,6 +86,10 @@ const progressCards = {
     <section class="main-container ">
       <AccountabilityStatus />
       <!-- <AccountabilityStatus /> -->
+    </section>
+
+    <section class="main-container flex flex-col gap-[20px]">
+      <GlowingStudents v-for="(item, index) in glowingAndGrowingStudents[school]" :key="index" :students="item.students" :name="item.name" :bgColor="item.bgColor" :color="item.color"/>
     </section>
 
     <section class="main-container gap-[20px]">
