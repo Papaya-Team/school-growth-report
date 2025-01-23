@@ -11,6 +11,7 @@ import DiagnosticResults from '@/components/home/DiagnosticResults.vue'
 import HoursStatus from '@/components/home/HoursStatus.vue'
 import ClosingGap from '@/components/closing-gap/ClosingGap.vue'
 import GlowingStudents from '@/components/home/GlowingStudents.vue'
+import MainBars from '@/components/home/MainBars.vue'
 
 import { useSchoolStore } from '@/stores/school';
 
@@ -59,8 +60,8 @@ const progressCards = {
 const glowingAndGrowingStudents = {
   elementary: [
     {
-      name: 'Glowing Students', 
-      color: '#7932FF', 
+      name: 'Glowing Students',
+      color: '#7932FF',
       bgColor: '#F6F1FF',
       students: [
         { name: 'Destiny Aguillon', percentage: 90 },
@@ -71,8 +72,8 @@ const glowingAndGrowingStudents = {
       ],
     },
     {
-      name: 'Growing Students', 
-      color: '#12B76A', 
+      name: 'Growing Students',
+      color: '#12B76A',
       bgColor: '#E7F8F0',
       students: [
         { name: 'Jaelyn Hernandez', percentage: 36 },
@@ -90,23 +91,24 @@ const glowingAndGrowingStudents = {
 <template>
   <main class="p-[20px]">
     <section class="grid grid-cols-5 gap-[24px] main-container">
-      <SingleKpiCard v-for="(item, index) in singleCards[school]" 
-      :key="item.name" 
-      :item="item" />
+      <SingleKpiCard v-for="(item, index) in singleCards[school]" :key="item.name" :item="item" />
+    </section>
+
+    <section class="main-container flex flex-col gap-[20px]">
+      <CardLayout>
+        <div class="flex gap-[20px]">
+          <MainBars class="w-[60%]" />
+          <div class="w-[40%] flex flex-col gap-[20px]">
+            <GlowingStudents v-for="(item, index) in glowingAndGrowingStudents[school]" :key="index"
+              :students="item.students" :name="item.name" :bgColor="item.bgColor" :color="item.color" />
+          </div>
+        </div>
+      </CardLayout>
     </section>
 
     <section class="main-container ">
       <AccountabilityStatus />
       <!-- <AccountabilityStatus /> -->
-    </section>
-
-    <section class="main-container flex flex-col gap-[20px]">
-      <GlowingStudents v-for="(item, index) in glowingAndGrowingStudents[school]" 
-        :key="index" 
-        :students="item.students"
-        :name="item.name" 
-        :bgColor="item.bgColor" 
-        :color="item.color" />
     </section>
 
     <section class="main-container gap-[20px]">
@@ -118,9 +120,7 @@ const glowingAndGrowingStudents = {
       <DiagnosticResults class="mt-[20px]" />
       <div>
         <HoursStatus class="mb-[20px]" />
-        <KpiProgressCard v-for="(item, index) in progressCards[school]" 
-          :key="index" 
-          :item="item" />
+        <KpiProgressCard v-for="(item, index) in progressCards[school]" :key="index" :item="item" />
 
       </div>
     </section>
